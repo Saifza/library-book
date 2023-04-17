@@ -39,33 +39,45 @@ public class Main {
         library.addBook(book9);
         library.addBook(book10);
         library.addBook(book11);
+        String title = null;
+        String name=null;
+        if (args.length > 1) {
+            title = args[0];
+            name= args[1];
+        } else {
+        
         System.out.println("Type in the title you are looking for.");
     	Scanner scanner1 = new Scanner(System.in);
         
-    	System.out.println(library.findBook(scanner1.nextLine()));
+    	title=scanner1.nextLine();
+    	System.out.println(library.findBook(title));
         
     	System.out.println("Please type in your full name.");
+    	
+    	
     	Scanner scanner2 = new Scanner(System.in); 
     	
-    	String input=scanner2.nextLine();
+    	 name= scanner2.nextLine();
     	
     	
-    	if(input.equalsIgnoreCase(patron3.getName())) {
+    	if(name.equalsIgnoreCase(patron3.getName())) {
 			
     		System.out.println("You are a patron, welcome to the library.");
   	}
-    	else if (input.equalsIgnoreCase(patron2.getName())) 
+    	else if (name.equalsIgnoreCase(patron2.getName())) 
     	{System.out.println("You are a patron, welcome to the library.");
     		}
     	
-    	else if (input.equalsIgnoreCase(patron1.getName())) {
+    	else if (name.equalsIgnoreCase(patron1.getName())) {
     		System.out.println("You are a patron, welcome to the library.");
     	}
     			
    	else	
    	System.out.println("Welcome to the library, if you like our environment consider becoming a patron.");      
     		       
-    //following commented lines of code allow one to chose an author among listed ones and returns
+        }
+    	
+    	//following commented lines of code allow one to chose an author among listed ones and returns
         // the name of a book by the author from library collection.
        
 //    	  System.out.println("Select from the authors below");
